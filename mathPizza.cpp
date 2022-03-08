@@ -2,36 +2,38 @@
 //
 // Created by Yiyun Qin
 // Created at March 2022
-// This is a math program with proper style
+// This program shows how local and global variables work
 
 #include <iostream>
-#include <iomanip>
+
+// global variable
+int variableX = 25;
+
+void localVariable() {
+    // This shows what happens with local variables
+
+    int variableX = 10;
+    int variableY = 30;
+    int variableZ = variable_X + variable_Y;
+    std::cout << "Local variable_X, variable_Y, variable_Z: " << variableX
+    << "+" << variableY << "=" << variableZ << std::endl;
+}
+
+
+void globalVariable() {
+    // This shows what happens with global variables
+
+    variableX = variableX + 1;
+    int variableY = 30;
+    int variableZ = variable_X + variable_Y;
+    std::cout << "Global variable_X, variable_Y, variable_Z: " << variableX
+    << "+" << variableY << "=" << variableZ << std::endl;
+}
+
 
 int main() {
-    // This function calculates the cost of a pizza
-    const float LABOR = 0.75;
-    const float RENT = 1.00;
-    const float MATERIAL_PER_INCH = 0.50;
+    // This function shows how local and global variables work
 
-    int diameter;
-    float untaxedPrice;
-    float HST;
-    float totalCost;
-
-    // input
-    std::cout << "Enter the diameter of the pizza you would like (inch): ";
-    std::cin >> diameter;
-
-    // process
-    untaxedPrice = LABOR + RENT + MATERIAL_PER_INCH * diameter;
-    HST = untaxedPrice * 0.13;
-    totalCost = untaxedPrice + HST;
-
-    // output
-    std::cout << std::endl;
-    std::cout << "The cost of a " << diameter <<
-    " inch pizza is $" << std::fixed
-    << std::setprecision(2) << std::setfill('0') << totalCost << std::endl;
-
-    std::cout << "\nDone." << std::endl;
+    localVariable(
+    globalVariable())
 }
