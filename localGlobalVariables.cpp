@@ -2,7 +2,7 @@
 //
 // Created by Yiyun Qin
 // Created at March 2022
-// This program shows how local and global variables work
+// This program shows how local and global variables work. Adding gitignore file to throw the .o file.
 
 #include <iostream>
 
